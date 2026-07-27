@@ -51,16 +51,33 @@
 // let c = arr+brr
 
 
-let a = [3,2,6,4,7,10]
-// a.sort()
-// console.log(a)
+// let a = [3,2,6,4,7,10]
+// // a.sort()
+// // console.log(a)
 
-const[f,s,t] = a
-console.log(f,s,t)
+// const[f,s,t] = a
+// console.log(f,s,t)
 
 
-let b = ...a
-console.log(typeof b)
+// let b = ...a
+// console.log(typeof b)
 
+
+// let a = [90,69,30]
+
+// for(let num of a){
+//   console.log(num)
+// }
+
+
+// let b = {
+//   name:"gavin",
+//   age:20,
+//   email:"dmellogavin07@gmail.com"
+// }
+
+// for(let num of b){
+//   console.log(num)
+// }
 
 
