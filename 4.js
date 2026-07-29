@@ -81,3 +81,11 @@
 // }
 
 
+
+
+function a(){
+  return 20
+}
+
+console.log(a())
+
