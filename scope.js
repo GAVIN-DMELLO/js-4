@@ -1,13 +1,5 @@
+{let balance = 1000}
 
-console.log(`global scope -> ${a}`)
+balance+=100
 
-if(1){
-  let a = 10
-  console.log(`block scope -> ${a}`)
-}
-
-(function(){
-  
-  console.log(`functional scope -> ${a}`)
-})()
-
+console.log(balance)
