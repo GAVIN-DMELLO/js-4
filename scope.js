@@ -1,5 +1,8 @@
-{let balance = 1000}
+const arr=[10,,20,30,40]
+let sum =0;
 
-balance+=100
+arr.forEach((num)=>{
+  sum+=num
+})
 
-console.log(balance)
+console.log(num)
