@@ -1,6 +1,6 @@
-const feed = document.getElementById('feed')
-const div = document.createElement('div')
-div.classList.add('post')
-div.textContent = "Just woke up and learning DOM manipulation!"
-// feed.insertAdjacentElement('afterbegin',div)
-feed.prepend(div)
+const email = document.getElementById('email-input')
+const span = document.createElement('span')
+span.classList.add('error-message')
+span.textContent = "Please enter a valid email"
+email.before(span)
+// email.insertAdjacentElement('afterend',span)
