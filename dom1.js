@@ -1,10 +1,18 @@
-const userStatus = "warning"; 
+const userStatus = "success"; 
 
+const badge = document.getElementById('dynamic-badge')
 
-const badge = document.getElementById('status-badge')
-badge.textContent = "System Warning"
-badge.classList.add('badge-active')
-badge.style.padding = '6px 12px'
-badge.style.borderRadius='20px'
-badge.style.fontSize='14px'
-badge.style.color='#856404'
+if(userStatus==="success"){
+  badge.classList.add('sucess-badge')
+  badge.style.backgroundColor='#d4edda'
+}else if(userStatus==="warning"){
+  badge.classList.add('warning-badge')
+  badge.style.backgroundColor='#fff3cd'
+}else if(userStatus==="danger"){
+  badge.classList.add('danger-badge')
+  badge.style.backgroundColor='#f8d7da'
+}
+
+badge.textContent = userStatus
+
+console.log(badge)
