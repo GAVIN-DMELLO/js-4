@@ -1,6 +1,10 @@
-const card = document.getElementById('user-card')
-card.classList.remove('light-theme')
-card.classList.add('dark-theme')
+const faqItem = document.getElementById('faq-item')
+faqItem.classList.toggle('is-open')
 
-console.log(card)
-console.log(card.classList.contains('dark-theme'))
+
+if(faqItem.classList.contains('is-open')){
+  faqItem.style.backgroundColor = '#e6f7ff'
+}else{
+  faqItem.style.backgroundColor = 'transparent'
+}
+
