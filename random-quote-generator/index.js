@@ -1,9 +1,19 @@
 const btn = document.getElementById('btn')
-btn.addEventListener('click' , ()=>{
+const quoteLine = document.createElement('h3')
+quoteLine.id = "quote"
+btn.addEventListener('click' , updateUI)
 
-})
+function randomQuoteGenerator(){
+  const randomIndex = Math.floor(Math.random()*10)
+  const randomQuote = quotes[randomIndex]
+  return randomQuote
+}
 
-
+function updateUI(){
+  quoteLine.textContent = randomQuoteGenerator().text
+  console.log(quoteLine)
+  btn.before(quoteLine)
+}
 
 
 

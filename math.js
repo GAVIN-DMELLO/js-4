@@ -40,3 +40,5 @@ function getRandomInt(min , max){
 }
 
 console.log(getRandomInt(1,10))
+
+
