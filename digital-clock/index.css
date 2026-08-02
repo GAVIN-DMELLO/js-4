@@ -1,5 +1,5 @@
-/* Import a bold, tall font that looks great in 3D */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Import a clean, modern geometric font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -9,84 +9,59 @@
 
 body {
   height: 100vh;
-  background-color: #0d0d0d;
-  
-  /* Creates a retro-futuristic floor grid */
-  background-image: 
-    linear-gradient(rgba(0, 255, 204, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 204, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: center center;
-  
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Bebas Neue', sans-serif;
   
-  /* This is required on the parent to create the 3D camera effect */
-  perspective: 1000px; 
-  overflow: hidden;
+  /* A deep, solid dark background */
+  background-color: #09090b; 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* The Product Card Container */
 #cnt {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Tight, precise spacing */
+  padding: 48px 72px;
   
-  /* Tilts the entire clock sideways into 3D space */
-  transform: rotateX(30deg) rotateY(-30deg) rotateZ(15deg);
-  transform-style: preserve-3d;
+  /* A slightly lighter surface color to stand out from the background */
+  background-color: #18181b;
   
-  /* Adds the floating effect */
-  animation: levitate 5s ease-in-out infinite;
+  /* A crisp, subtle border to define the edges */
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  
+  /* Realistic, layered shadows for professional elevation */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 
+              0 4px 6px -4px rgba(0, 0, 0, 0.5);
 }
 
+/* Styling the Clock Numbers */
 #cnt span {
-  font-size: 12rem;
-  color: #00ffcc; /* Bright neon cyan front face */
+  font-size: 6.5rem;
+  font-weight: 700;
+  color: #fafafa; /* Off-white for better eye comfort than pure #FFF */
+  letter-spacing: -0.05em; /* Tighter letter spacing for a modern look */
   line-height: 1;
-  letter-spacing: 4px;
   
-  /* 
-    The 3D Hack: Stacking solid text-shadows step-by-step 
-    to create a thick, extruded block effect, ending with a soft drop shadow.
-  */
-  text-shadow: 
-    1px 1px 0 #0055ff,
-    2px 2px 0 #0055ff,
-    3px 3px 0 #0055ff,
-    4px 4px 0 #0055ff,
-    5px 5px 0 #0055ff,
-    6px 6px 0 #0055ff,
-    7px 7px 0 #0055ff,
-    8px 8px 0 #0055ff,
-    9px 9px 0 #0055ff,
-    10px 10px 0 #0055ff,
-    11px 11px 0 #0055ff,
-    12px 12px 0 #0055ff,
-    13px 13px 0 #0055ff,
-    14px 14px 0 #0055ff,
-    15px 15px 0 #0055ff,
-    25px 25px 30px rgba(0, 0, 0, 0.9); /* Heavy shadow on the floor */
+  /* Crucial for clocks: keeps numbers aligned perfectly so they don't jitter */
+  font-variant-numeric: tabular-nums; 
 }
 
-/* Make the colons blink while maintaining their 3D shape */
+/* Styling the Colons */
 #col1, #col2 {
-  animation: blink 1s infinite;
+  color: #a1a1aa; /* Muted zinc color so the focus stays on the numbers */
+  font-size: 5rem;
+  position: relative;
+  top: -6px; /* Visually centers the colon alongside the numbers */
+  animation: pulse 1s infinite steps(1); 
 }
 
-/* The floating animation keyframes */
-@keyframes levitate {
-  0%, 100% {
-    transform: rotateX(30deg) rotateY(-30deg) rotateZ(15deg) translateY(0px);
-  }
+/* Using steps(1) makes it snap on and off instantly, like a real digital device, instead of a slow fade */
+@keyframes pulse {
   50% {
-    /* Bobs up smoothly while maintaining the 3D tilt */
-    transform: rotateX(30deg) rotateY(-30deg) rotateZ(15deg) translateY(-40px);
+    opacity: 0;
   }
-}
-
-/* Hard snap blink for the colons */
-@keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
 }
