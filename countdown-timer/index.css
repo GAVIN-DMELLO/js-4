@@ -1,0 +1,127 @@
+/* --- Import Modern Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background-color: #000000; /* Pitch black */
+  color: #ededed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  overflow: hidden;
+}
+
+/* --- The Countdown Display --- */
+#countdown {
+  font-size: 7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  /* Sleek silver/white gradient for the text */
+  background: linear-gradient(180deg, #ffffff 0%, #71717a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -2px;
+  filter: drop-shadow(0 4px 24px rgba(255, 255, 255, 0.1));
+}
+
+/* --- The Form (Acts as a subtle "Dock") --- */
+#form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #111111;
+  padding: 0.75rem;
+  border-radius: 100px; /* Pill shape */
+  border: 1px solid #222222;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+}
+
+/* --- Dropdowns --- */
+select {
+  appearance: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+select:hover {
+  background-color: #222222;
+}
+
+select:focus {
+  background-color: #222222;
+  border-color: #444444;
+}
+
+/* --- Buttons --- */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+/* Start Button */
+#start {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+}
+
+#start:hover {
+  background-color: #e4e4e7;
+  transform: scale(1.02);
+}
+
+#start:active {
+  transform: scale(0.98);
+}
+
+/* Stop Button */
+#stop {
+  position: absolute;
+  top: 2rem;
+  background: transparent;
+  color: #a1a1aa;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid #27272a;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+#stop:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+}
+
+#stop:active {
+  transform: scale(0.95);
+}
