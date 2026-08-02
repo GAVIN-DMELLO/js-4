@@ -1,0 +1,67 @@
+/* Import a clean, modern geometric font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* A deep, solid dark background */
+  background-color: #09090b; 
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* The Product Card Container */
+#cnt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Tight, precise spacing */
+  padding: 48px 72px;
+  
+  /* A slightly lighter surface color to stand out from the background */
+  background-color: #18181b;
+  
+  /* A crisp, subtle border to define the edges */
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  
+  /* Realistic, layered shadows for professional elevation */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 
+              0 4px 6px -4px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling the Clock Numbers */
+#cnt span {
+  font-size: 6.5rem;
+  font-weight: 700;
+  color: #fafafa; /* Off-white for better eye comfort than pure #FFF */
+  letter-spacing: -0.05em; /* Tighter letter spacing for a modern look */
+  line-height: 1;
+  
+  /* Crucial for clocks: keeps numbers aligned perfectly so they don't jitter */
+  font-variant-numeric: tabular-nums; 
+}
+
+/* Styling the Colons */
+#col1, #col2 {
+  color: #a1a1aa; /* Muted zinc color so the focus stays on the numbers */
+  font-size: 5rem;
+  position: relative;
+  top: -6px; /* Visually centers the colon alongside the numbers */
+  animation: pulse 1s infinite steps(1); 
+}
+
+/* Using steps(1) makes it snap on and off instantly, like a real digital device, instead of a slow fade */
+@keyframes pulse {
+  50% {
+    opacity: 0;
+  }
+}
