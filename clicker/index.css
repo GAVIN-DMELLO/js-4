@@ -1,0 +1,67 @@
+/* --- 1. Base Setup --- */
+body {
+  /* Forces the body to take up the full screen height */
+  min-height: 100vh; 
+  
+  /* Removes default browser margins */
+  margin: 0; 
+  
+  /* Dark background so you can see the colors */
+  background-color: #1a1a1a; 
+  
+  /* Prevents scrollbars from appearing if you click near the edges */
+  overflow: hidden; 
+}
+
+
+/* --- 2. The Spawning Circle Styling --- */
+.pop-effect {
+  position: absolute;
+  pointer-events: none; /* Crucial: clicks go THROUGH this element */
+  
+  /* Shape and Color */
+  width: 60px;
+  height: 60px;
+  background-color: #a855f7; /* Vibrant purple color */
+  border-radius: 50%; /* Makes it a perfect circle */
+  
+  /* Centering the "Hi" text inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+  
+  /* Start invisible */
+  opacity: 0;
+  
+  /* The 5-second slow expanding animation */
+  animation: slowExpandFade 5s ease-in-out forwards; 
+}
+
+
+/* --- 3. The 5-Second Animation Timeline --- */
+@keyframes slowExpandFade {
+  0% {
+    /* 0 seconds: Starts invisible and tiny */
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  20% {
+    /* 1 second mark: Slowly becomes fully visible at normal size */
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  80% {
+    /* 4 second mark: Spends 3 seconds slowly expanding */
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2);
+  }
+  100% {
+    /* 5 second mark: Gently fades away while expanding a little more */
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.5);
+  }
+}
