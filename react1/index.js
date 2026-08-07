@@ -1,12 +1,12 @@
-function UserProfile({name , role , isOnline}){
-  return (
-    <div>
-      <h1>{name}</h1>
-      <p>{role}</p>
-      <span>{isOnline?"Online":"Offline"}</span>
-    </div>
-  )
-}
+// function UserProfile({name , role , isOnline}){
+//   return (
+//     <div>
+//       <h1>{name}</h1>
+//       <p>{role}</p>
+//       <span>{isOnline?"Online":"Offline"}</span>
+//     </div>
+//   )
+// }
 
 
 
@@ -64,34 +64,64 @@ function UserProfile({name , role , isOnline}){
 
 // rootEl.render(<App />)
 
-const sampleProducts = [
-  { id: 101, name: "Wireless Mouse", price: 25, inStock: true },
-  { id: 102, name: "Mechanical Keyboard", price: 80, inStock: false },
-  { id: 103, name: "HD Monitor", price: 150, inStock: true }
-];
 
 
 
-function ProductList({products}){
-  return (
-    <ul>
-      {products.map((item)=>
-      {
-        return  item.inStock?
-        <li key={item.id}>{item.name}-${item.price} <span style={{color:'green'}}>[In Stock]</span> </li>
-        :
-        <li key={item.id} style={{ textDecoration: 'line-through', color: 'gray' }}>{item.name}-${item.price}
-        <span style={{color:'red' , textDecoration:'none'}}>[Out of Stock]</span></li>
-      })}
-    </ul>
-  )
-}
 
 
 
- const root = document.getElementById('root')
 
-const rootEl = ReactDOM.createRoot(root)
 
-rootEl.render(<ProductList products={sampleProducts} />)
+
+// const sampleProducts = [
+//   { id: 101, name: "Wireless Mouse", price: 25, inStock: true },
+//   { id: 102, name: "Mechanical Keyboard", price: 80, inStock: false },
+//   { id: 103, name: "HD Monitor", price: 150, inStock: true }
+// ];
+
+
+
+// function ProductList({products}){
+//   return (
+//     <ul>
+//       {products.map((item)=>
+//       {
+//         return  item.inStock?
+//         <li key={item.id}>
+//           {item.name}-${item.price} 
+//           <span style={{color:'green'}}>
+//             [In Stock]
+//           </span> 
+//         </li>
+//         :
+//         <li key={item.id}>
+//           <span style={{ textDecoration: 'line-through', color: 'gray' }}>
+//             {item.name}-${item.price}
+//           </span>
+//           <span style={{color:'red' , textDecoration:'none'}}>
+//             [Out of Stock]
+//           </span>
+//         </li>
+//       })}
+//     </ul>
+//   )
+// }
+
+
+
+//  const root = document.getElementById('root')
+
+// const rootEl = ReactDOM.createRoot(root)
+
+// rootEl.render(<ProductList products={sampleProducts} />)
+
+
+
+
+
+
+const userGreeting = React.createElement('div' , {id:'container'} , 
+  React.createElement('h1' , {className:'title'} , 'Welcome'),
+  React.createElement('p' , null , 'Logged in as Gavin')
+)
 
