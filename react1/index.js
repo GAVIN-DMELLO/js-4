@@ -38,13 +38,13 @@
 
 
 
-// function Card({children}){
-//   return (
-//     <div style={{ border: '1px solid #ccc', padding: '16px', borderRadius: '8px' }}>
-//       {children}
-//     </div>
-//   )
-// }
+function Card({children}){
+  return (
+    <div style={{ border: '1px solid #ccc', padding: '16px', borderRadius: '8px' }}>
+      {children}
+    </div>
+  )
+}
 
 
 // function App(){
@@ -128,29 +128,103 @@
 
 
 
-const userDetails = [
-  { id: 1, label: "Name", value: "Gavin" },
-  { id: 2, label: "Role", value: "Developer" },
-  { id: 3, label: "Status", value: "Active" }
+// const userDetails = [
+//   { id: 1, label: "Name", value: "Gavin" },
+//   { id: 2, label: "Role", value: "Developer" },
+//   { id: 3, label: "Status", value: "Active" }
+// ];
+
+// function DescriptionList() {
+//   return (
+//     <dl>
+//       {userDetails.map((item) => (
+//         <React.Fragment key={item.id}>
+//           <dt>{item.label}</dt>
+//           <dd>{item.value}</dd>
+//         </React.Fragment>
+//       ))}
+//     </dl>
+//   );
+// }
+
+
+
+//  const root = document.getElementById('root')
+
+// const rootEl = ReactDOM.createRoot(root)
+
+// rootEl.render(<DescriptionList />)
+
+
+
+
+
+
+
+const notifications = [
+  { id: 'n1', title: "System Update", message: "v2.0 is live.", type: 'info', unread: true },
+  { id: 'n2', title: "Security Alert", message: "New login detected.", type: 'warning', unread: true },
+  { id: 'n3', title: "Welcome!", message: "Thanks for joining.", type: 'success', unread: false }
 ];
 
-function DescriptionList() {
+
+
+function NotificationCenter({items=[]}){
+
+  if(items.length===0){
+    return <p>No notifications available</p>
+  }
+
   return (
-    <dl>
-      {userDetails.map((item) => (
-        <React.Fragment key={item.id}>
-          <dt>{item.label}</dt>
-          <dd>{item.value}</dd>
-        </React.Fragment>
+    <Card>
+      {items.map((item)=>(
+        <NotificationItem 
+          key={item.id}
+          title={item.title}
+          message={item.message}
+          type={item.type}
+          unread={item.unread}
+        />
       ))}
-    </dl>
+    </Card>
+  )
+}
+
+const bgColors = {
+  info: '#e0f7fa',
+  warning: '#fffde7',
+  success: '#e8f5e9'
+};
+
+function NotificationItem({ title, message, type, unread }) {
+  return (
+    <div style={{ 
+      backgroundColor: bgColors[type] || '#f5f5f5', 
+      padding: '12px', 
+      borderRadius: '6px', 
+      marginBottom: '10px' 
+    }}>
+      <h4 style={{ margin: '0 0 4px 0' }}>
+        {title} {unread && <span style={{ color: 'red', fontWeight: 'bold' }}>[NEW]</span>}
+      </h4>
+      <p style={{ margin: 0, color: '#333' }}>{message}</p>
+    </div>
   );
 }
 
 
 
- const root = document.getElementById('root')
+
+
+
+
+
+
+
+
+
+const root = document.getElementById('root')
 
 const rootEl = ReactDOM.createRoot(root)
 
-rootEl.render(<DescriptionList />)
+rootEl.render(<NotificationCenter items={notifications} />)
