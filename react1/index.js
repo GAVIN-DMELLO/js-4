@@ -120,8 +120,37 @@
 
 
 
-const userGreeting = React.createElement('div' , {id:'container'} , 
-  React.createElement('h1' , {className:'title'} , 'Welcome'),
-  React.createElement('p' , null , 'Logged in as Gavin')
-)
+// const userGreeting = React.createElement('div' , {id:'container'} , 
+//   React.createElement('h1' , {className:'title'} , 'Welcome'),
+//   React.createElement('p' , null , 'Logged in as Gavin')
+// )
 
+
+
+
+const userDetails = [
+  { id: 1, label: "Name", value: "Gavin" },
+  { id: 2, label: "Role", value: "Developer" },
+  { id: 3, label: "Status", value: "Active" }
+];
+
+function DescriptionList() {
+  return (
+    <dl>
+      {userDetails.map((item) => (
+        <React.Fragment key={item.id}>
+          <dt>{item.label}</dt>
+          <dd>{item.value}</dd>
+        </React.Fragment>
+      ))}
+    </dl>
+  );
+}
+
+
+
+ const root = document.getElementById('root')
+
+const rootEl = ReactDOM.createRoot(root)
+
+rootEl.render(<DescriptionList />)
