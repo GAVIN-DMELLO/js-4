@@ -1,8 +1,9 @@
-function UserProfile(props){
+function UserProfile({name , role , isOnline}){
   return (
-    <div style={props.style}>
-      <h1>Gavin Neel Dmello</h1>
-      <p>Frontend Developer</p>
+    <div>
+      <h1>{name}</h1>
+      <p>{role}</p>
+      <span>{isOnline?"Online":"Offline"}</span>
     </div>
   )
 }
@@ -15,4 +16,4 @@ const root = document.getElementById('root')
 
 const rootEl = ReactDOM.createRoot(root)
 
-rootEl.render(<UserProfile style={{padding:"16px" , backgroundColor:"#f4f4f4"}}/>)
+rootEl.render(<UserProfile name="Gavin Neel Dmello" role="Frontend Developer" isOnline={true}/>)
