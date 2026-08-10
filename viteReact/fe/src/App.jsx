@@ -3,25 +3,25 @@ import { useState } from "react"
 
 export default function App(){
 
-  let [count , setCount] = useState(0)
+  let [text , showText] = useState("")
 
 
-  function increment(){
-    setCount(prev=>prev+1)
+  function show(e){
+    showText(e.target.value)
   }
 
-  function decrement(){
-    if(count===0){
-      return
-    }
-    setCount(prev=>prev-1)
+  function clear(){
+    showText("")
   }
+
+
+  
 
   return (
     <>
-      <span>{count}</span>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
+      <input type="text" onChange={show}></input>
+      <button onClick={clear}>Clear</button>
+      <p>{text}</p>
     </>
   )
 }
